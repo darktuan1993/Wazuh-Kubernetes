@@ -25,8 +25,6 @@ spec:
       name: wazuh-indexer
     spec:
       # Set the wazuh-indexer volume permissions so the wazuh-indexer user can use it
-      securityContext:
-        fsGroup: 1000      
       volumes:
         - name: indexer-certs
           secret:
@@ -61,11 +59,11 @@ spec:
             privileged: true
       containers:
         - name: wazuh-indexer
-          image: 'wazuh/wazuh-indexer:4.4.4'
+          image: 'wazuh/wazuh-indexer:4.9.1'
           resources:
             limits:
-              cpu: 1500m
-              memory: 4564Mi
+              cpu: 500m
+              memory: 1564Mi
           env:
             - name: OPENSEARCH_JAVA_OPTS
               value: '-Xms1g -Xmx1g -Dlog4j2.formatMsgNoLookups=true'

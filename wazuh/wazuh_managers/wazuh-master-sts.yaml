@@ -41,11 +41,11 @@ spec:
         fsGroup: 101
       containers:
         - name: wazuh-manager
-          image: 'wazuh/wazuh-manager:4.4.4'
+          image: 'wazuh/wazuh-manager:4.9.1'
           resources:
             limits:
               cpu: 400m
-              memory: 1512Mi
+              memory: 512Mi
           securityContext:
             capabilities:
               add: ["SYS_CHROOT"]
@@ -112,7 +112,7 @@ spec:
               name: api
           env:
             - name: INDEXER_URL
-              value: 'https://wazuh-indexer-0.wazuh-indexer:9200'
+              value: 'https://indexer:9200'
             - name: INDEXER_USERNAME
               valueFrom:
                 secretKeyRef:

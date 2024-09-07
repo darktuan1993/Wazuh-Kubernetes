@@ -1,13 +1,14 @@
+# Copyright (C) 2019, Wazuh Inc.
+#
+# This program is a free software; you can redistribute it
+# and/or modify it under the terms of the GNU General Public
+# License (version 2) as published by the FSF - Free Software
+# Foundation.
+
+# Wazuh StorageClass
+
 apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata:
   name: wazuh-storage
-provisioner: nfs.csi.k8s.io
-parameters:
-  server: 192.168.9.79
-  share: /volume1/PV-Test
-reclaimPolicy: Delete
-volumeBindingMode: Immediate
-mountOptions:
-  - nfsvers=4.1
-  - hard
+# provisioner: k8s.io/minikube-hostpath
