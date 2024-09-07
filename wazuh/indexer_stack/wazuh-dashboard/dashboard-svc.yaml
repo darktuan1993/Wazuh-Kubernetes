@@ -21,10 +21,11 @@ metadata:
     service.beta.kubernetes.io/aws-load-balancer-ssl-ports: '443'
     service.beta.kubernetes.io/aws-load-balancer-backend-protocol: https
 spec:
-  type: LoadBalancer
+  type: NodePort
   selector:
     app: wazuh-dashboard
   ports:
     - name: dashboard
+      nodePort: 32667
       port: 443
       targetPort: 5601
