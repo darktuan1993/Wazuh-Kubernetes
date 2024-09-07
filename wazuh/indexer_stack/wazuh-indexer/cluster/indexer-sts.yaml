@@ -64,8 +64,8 @@ spec:
           image: 'wazuh/wazuh-indexer:4.9.0'
           resources:
             limits:
-              cpu: 500m
-              memory: 1564Mi
+              cpu: 2500m
+              memory: 8564Mi
           env:
             - name: OPENSEARCH_JAVA_OPTS
               value: '-Xms1g -Xmx1g -Dlog4j2.formatMsgNoLookups=true'
