@@ -1,7 +1,7 @@
 apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata:
-  name: nfs-csi-nas
+  name: wazuh-storage
 provisioner: nfs.csi.k8s.io
 parameters:
   server: 192.168.9.79
