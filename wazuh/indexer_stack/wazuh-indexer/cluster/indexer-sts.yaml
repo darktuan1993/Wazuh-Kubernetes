@@ -25,6 +25,8 @@ spec:
       name: wazuh-indexer
     spec:
       # Set the wazuh-indexer volume permissions so the wazuh-indexer user can use it
+      securityContext:
+        fsGroup: 1000        
       volumes:
         - name: indexer-certs
           secret:
